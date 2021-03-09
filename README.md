@@ -15,8 +15,8 @@ docker-compose up -d    # starts up app and db containers in the background
 Next, create and run the first migration of the test database:
 
 ```
-docker-compose run app rake db:create
-docker-compose run app rake db:migrate
+docker-compose run app bundle exec rake db:create
+docker-compose run app bundle exec rake db:migrate
 ```
 *You should now have access to the rails app at localhost:3000*
 
