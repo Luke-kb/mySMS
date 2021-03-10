@@ -12,7 +12,7 @@ docker-compose build    # builds docker image
 docker-compose up -d    # starts up app and db containers in the background
 ``` 
 
-Next, setup database:
+Next, setup dev and test databases:
 
 ```
 docker-compose run app bundle exec rake db:create db:migrate
