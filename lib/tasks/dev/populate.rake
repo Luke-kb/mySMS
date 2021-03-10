@@ -1,7 +1,7 @@
 require 'faker' 
 require 'factory_bot_rails'
 
-namespace :db do
+namespace :dev do
 
     desc 'populate dev database with sample student data'
     
