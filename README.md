@@ -15,11 +15,14 @@ docker-compose up -d    # starts up app and db containers in the background
 Next, setup database:
 
 ```
-docker-compose run app bundle exec rake db:create
-docker-compose run app bundle exec rake db:migrate
+docker-compose run app bundle exec rake db:create db:migrate
 docker-compose run app bundle exec rake db:test:prepare
 ```
-*You should now have access to the rails app at localhost:3000*
+Launch the app at localhost:3000:
+
+```
+docker-compose execute app bundle exec rails server -b 0.0.0.0
+```
 
 Run rspec tests:
 ```
