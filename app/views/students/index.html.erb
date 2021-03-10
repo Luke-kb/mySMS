@@ -1,6 +1,6 @@
-<h1>Student List</h1>
+<h2>Student Index</h2>
 
-<table>
+<table class="table table-striped">
     <tr>
         <th>Name</th>
         <th>Email</th>
@@ -17,3 +17,5 @@
 </tr>
 <% end %> 
 </table>
+
+<%= will_paginate @students %>
