@@ -1,6 +1,6 @@
 Mysms::Application.routes.draw do
 
-  root to: "home#index"
+  root to: "students#index"
 
   get "/students", to: "students#index"
 
