@@ -42,4 +42,5 @@ group :development, :test do
   gem 'factory_bot_rails'
   gem 'faker'
   gem 'test-unit', '~> 3.0'
+  gem 'will_paginate'
 end
