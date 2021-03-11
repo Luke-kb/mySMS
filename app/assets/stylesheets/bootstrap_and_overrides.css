@@ -9,3 +9,7 @@
   td, th {
     padding: 0 2rem;
   }
+
+  table {
+    border: 1px solid rgb(221, 215, 215);
+  }
