@@ -1,0 +1,21 @@
+<h2>Student Index</h2>
+
+<table class="table table-striped">
+    <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>DOB</th>
+        <th>Gender</th>
+    </tr>
+
+<% @students.each do |student| %>
+    <tr>
+        <td><%= student.full_name %></td>
+        <td><%= student.email %></td>
+        <td><%= student.birth_date %></td>
+        <td><%= student.gender %></td>
+    </tr>
+<% end %> 
+</table>
+
+<%= will_paginate @students %>
