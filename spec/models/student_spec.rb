@@ -2,17 +2,16 @@ require 'rails_helper'
 
 RSpec.describe Student, type: :model do
   
+  subject { student }
   context 'with valid attributes' do
-    let(:student) { build(:student) }
+    let(:student) { build(:student, title: "Mr", first_name: "Harry", middle_name: "James", last_name: "Potter" ) }
     
-    subject { student }
     it "is valid" do
       expect(student).to be_valid
     end
     
-    subject { student }
     it "returns full name as a string" do
-      expect(subject.full_name).to eq("#{subject.title} #{subject.first_name} #{subject.middle_name} #{subject.last_name}")
+      expect(subject.full_name).to eq("Mr Harry James Potter")
     end
 
   end
