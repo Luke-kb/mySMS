@@ -21,7 +21,7 @@ docker-compose exec app bundle exec rake db:test:prepare
 
 Populate database with student data:
 ```
-docker-compose exec app bundle exec rake db:populate
+docker-compose exec app bundle exec rake dev:populate
 ```
 
 Launch the app at localhost:3000:

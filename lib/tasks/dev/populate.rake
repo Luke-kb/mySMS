@@ -7,7 +7,7 @@ namespace :dev do
     
     task :populate => :environment do
         Rake::Task['db:reset'].invoke
-        20.times do |n|
+        50.times do |n|
             FactoryBot.create(:student)
         end
     end
