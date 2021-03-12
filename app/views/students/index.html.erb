@@ -6,16 +6,24 @@
         <th>Email</th>
         <th>DOB</th>
         <th>Gender</th>
+        <th></th>
+        <th></th>
+        <th></th>
     </tr>
 
 <% @students.each do |student| %>
-    <tr>
-        <td><%= student.full_name %></td>
-        <td><%= student.email %></td>
-        <td><%= student.birth_date %></td>
-        <td><%= student.gender %></td>
-    </tr>
+<tr>
+    <td><%= student.full_name %></td>
+    <td><%= student.email %></td>
+    <td><%= student.birth_date %></td>
+    <td><%= student.gender %></td>
+    <td><%= link_to "Show", student_path(student) %></td>
+    <td><%= link_to "Edit", edit_student_path(student) %></td>
+    <td><%= link_to "Delete", student, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+</tr>
 <% end %> 
 </table>
 
-<%= will_paginate @students %>
+<div class="apple_pagination">
+    <%= will_paginate @students %>
+</div>
