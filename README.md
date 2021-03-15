@@ -32,7 +32,7 @@ docker-compose exec app bundle exec rails server -b 0.0.0.0
 
 Run rspec tests:
 ```
-docker-compose run app bundle exec rspec
+docker-compose run app bundle exec rspec -f d
 ``` 
 
 And to spin down the containers:
