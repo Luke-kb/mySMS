@@ -45,4 +45,6 @@ group :development, :test do
   gem 'faker'
   gem 'test-unit', '~> 3.0'
   gem 'will_paginate'
+  gem 'byebug'
+  gem 'pry-rails'
 end
