@@ -46,5 +46,6 @@ group :development, :test do
   gem 'test-unit', '~> 3.0'
   gem 'will_paginate'
   gem 'byebug'
+  gem 'pry'
   gem 'pry-rails'
 end

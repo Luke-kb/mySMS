@@ -171,6 +171,7 @@ DEPENDENCIES
   jquery-rails
   less-rails
   mysql2 (= 0.3.20)
+  pry
   pry-rails
   rails (= 3.2.22.5)
   rspec-rails (~> 3.6.0)
