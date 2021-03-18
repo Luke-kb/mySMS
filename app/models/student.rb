@@ -1,5 +1,5 @@
 class Student < ActiveRecord::Base
-  attr_accessible :title_id, :birth_date, :email, :first_name, :gender, :last_name, :middle_name
+  attr_accessible :title, :birth_date, :email, :first_name, :gender, :last_name, :middle_name
 
   belongs_to :title
 
