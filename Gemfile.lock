@@ -42,6 +42,11 @@ GEM
     commonjs (0.2.7)
     concurrent-ruby (1.1.8)
     diff-lcs (1.4.4)
+    draper (2.1.0)
+      actionpack (>= 3.0)
+      activemodel (>= 3.0)
+      activesupport (>= 3.0)
+      request_store (~> 1.0)
     erubis (2.7.0)
     execjs (2.7.0)
     factory_bot (4.11.1)
@@ -109,6 +114,8 @@ GEM
     rdoc (3.12.2)
       json (~> 1.4)
     ref (2.0.0)
+    request_store (1.5.0)
+      rack (>= 1.4)
     rspec-core (3.6.0)
       rspec-support (~> 3.6.0)
     rspec-expectations (3.6.0)
@@ -166,11 +173,13 @@ PLATFORMS
 DEPENDENCIES
   byebug
   coffee-rails (~> 3.2.1)
+  draper
   factory_bot_rails
   faker
   jquery-rails
   less-rails
   mysql2 (= 0.3.20)
+  pry
   pry-rails
   rails (= 3.2.22.5)
   rspec-rails (~> 3.6.0)

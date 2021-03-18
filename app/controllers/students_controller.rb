@@ -1,8 +1,11 @@
 class StudentsController < ApplicationController
-   before_filter :load_student, except: [:index]
+    decorates_assigned :student
+
+    before_filter :load_student, except: [:index]
 
     def index
-        @students = Student.paginate(page: params[:page], per_page: 10)
+        # @students = Student.paginate(page: params[:page], per_page: 10).decorate
+        @students = Student.paginate(page: params[:page], per_page: 10).decorate
     end
 
     def show
