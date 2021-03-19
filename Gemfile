@@ -20,10 +20,11 @@ group :assets do
   gem "twitter-bootstrap-rails"
 
   gem 'uglifier', '>= 1.0.3'
-  gem 'draper'
-  gem 'will_paginate'
-  gem 'haml-rails', '~> 0.4.0'
 end
+
+gem 'draper'
+gem 'will_paginate'
+gem 'haml-rails', '~> 0.4.0'
 
 gem 'jquery-rails'
 
