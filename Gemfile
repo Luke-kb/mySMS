@@ -22,6 +22,10 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+gem 'draper'
+gem 'will_paginate'
+gem 'haml-rails', '~> 0.4.0'
+
 gem 'jquery-rails'
 
 # To use ActiveModel has_secure_password
@@ -44,9 +48,7 @@ group :development, :test do
   gem 'factory_bot_rails'
   gem 'faker'
   gem 'test-unit', '~> 3.0'
-  gem 'will_paginate'
   gem 'byebug'
   gem 'pry'
   gem 'pry-rails'
-  gem 'draper'
 end
