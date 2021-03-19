@@ -11,7 +11,7 @@ RSpec.describe Student, type: :model do
     end
     
     it "returns full name as a string" do
-      expect(subject.full_name).to eq("Mr. Harry James Potter")
+      expect(subject.full_name).to eq("Mr Harry James Potter")
     end
 
   end
