@@ -13,7 +13,7 @@ namespace :dev do
             FactoryBot.create(:title, id: (i + 1), name: "#{v}")
         } 
         # student table
-        50.times do |n|
+        50.times do
             FactoryBot.create(:student, title_id: rand(1..6))
         end
         
