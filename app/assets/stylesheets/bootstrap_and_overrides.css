@@ -13,16 +13,3 @@ td, th {
 table {
   border: 1px solid rgb(221, 215, 215);
 }
-
-.form-container {
-  display: flex;
-}
-
-.form-group{
-  display: flex;
-  flex-direction: column;
-}
-
-.form-group > select {
-  margin: 5px 0;
-}
