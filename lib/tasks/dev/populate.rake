@@ -8,14 +8,15 @@ namespace :dev do
     task :populate => :environment do
         Rake::Task['db:reset'].invoke
         
-        # title table
+        # Title table
         %w(Mr Mrs Miss Ms Dr Master).each_with_index { |v, i| 
             FactoryBot.create(:title, id: (i + 1), name: "#{v}")
         } 
-        # student table
-        50.times do
-            FactoryBot.create(:student, title_id: rand(1..6))
-        end
         
+        # Student table
+        FactoryBot.create_list(:student, 50, title_id: rand(1..6))  
+    
+        # Course table
+        FactoryBot.create_list(:course, 10)
     end
 end
