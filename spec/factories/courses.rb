@@ -1,10 +1,10 @@
 FactoryBot.define do
   factory :course do
-    name { "MyString" }
-    description { "MyText" }
-    number_of_semesters { 1 }
-    start_date { "2021-03-19" }
-    end_date { "2021-03-19" }
-    allocation { 1 }
+    name { "#{Faker::Job.unique.field} 101" }
+    description { Faker::Lorem.paragraph }
+    number_of_semesters { rand(1..4) }
+    start_date { Date.today }
+    end_date { Faker::Date.forward(days: 30) }
+    allocation { rand(20..30) }
   end
 end
