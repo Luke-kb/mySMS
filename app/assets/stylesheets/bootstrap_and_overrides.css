@@ -1,15 +1,15 @@
 /*
-  =require twitter-bootstrap-static/bootstrap
+=require twitter-bootstrap-static/bootstrap
 
-  Use Font Awesome icons (default)
-  To use Glyphicons sprites instead of Font Awesome, replace with "require twitter-bootstrap-static/sprites"
-  =require twitter-bootstrap-static/fontawesome
-  */
+Use Font Awesome icons (default)
+To use Glyphicons sprites instead of Font Awesome, replace with "require twitter-bootstrap-static/sprites"
+=require twitter-bootstrap-static/fontawesome
+*/
 
-  td, th {
-    padding: 0 2rem;
-  }
+td, th {
+  padding: 0 2rem;
+}
 
-  table {
-    border: 1px solid rgb(221, 215, 215);
-  }
+table {
+  border: 1px solid rgb(221, 215, 215);
+}

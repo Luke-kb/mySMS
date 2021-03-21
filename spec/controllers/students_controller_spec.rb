@@ -45,7 +45,7 @@ RSpec.describe StudentsController, type: :controller do
             subject { put :update, id: student, student: attributes_for(:student, first_name: "Larry") }
             
             it "updates student attributes" do
-                expect{ subject }.to change { student.reload.first_name }.to("Larry")
+                expect { subject }.to change { student.reload.first_name }.to("Larry")
             end
             
             it { is_expected.to redirect_to student }
