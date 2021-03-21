@@ -2,11 +2,11 @@
     display: flex;
   }
   
-  .form-group{
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .form-group > select {
-    margin: 5px 0;
-  }  
+.form-group{
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group > select {
+  margin: 5px 0;
+}  
