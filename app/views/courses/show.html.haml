@@ -1,0 +1,25 @@
+%h3= "#{@course.name}"
+
+%table.table.table-striped
+    %tbody
+        %tr
+            %th Name
+            %th Description
+            %th Length (semesters)
+            %th Start Date
+            %th End Date
+            %th Allocation (max. number)
+            %th
+            %th
+
+        %tr
+            %td= @course.name
+            %td= @course.description
+            %td= @course.number_of_semesters
+            %td= @course.start_date
+            %td= @course.end_date
+            %td= @course.allocation
+            %td= link_to "Edit", edit_course_path(@course)
+            %td= link_to "Delete", @course, method: :delete, data: { confirm: 'Are you sure?' }
+
+= link_to "Back", courses_path, class: 'btn btn-info'
