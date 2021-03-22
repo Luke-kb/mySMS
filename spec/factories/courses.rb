@@ -3,8 +3,8 @@ FactoryBot.define do
     name { "#{Faker::Job.unique.field} 101" }
     description { Faker::Lorem.paragraph }
     number_of_semesters { rand(1..4) }
-    start_date { Date.today }
-    end_date { Faker::Date.forward(days: 30) }
-    allocation { rand(20..30) }
+    start_date { Faker::Date.between(from: 10.days.ago, to: Date.today) }
+    end_date { Faker::Date.forward(days: rand(30..50) }
+    allocation { rand(20..40) }
   end
 end
