@@ -4,7 +4,8 @@ RSpec.describe Student, type: :model do
   
   subject { student }
   context 'with valid attributes' do
-    let(:student) { build(:student, first_name: "Harry", middle_name: "James", last_name: "Potter" ) }
+    let(:title) { build(:title, name: "Mr")}
+    let(:student) { build(:student, title: title, first_name: "Harry", middle_name: "James", last_name: "Potter" ).decorate }
     
     it "is valid" do
       expect(student).to be_valid

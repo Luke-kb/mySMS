@@ -8,14 +8,14 @@ RSpec.describe Course, type: :model do
     it "is valid" do
       expect(subject).to be_valid
     end
-
   end
 
   context "with invalid attributes" do
     let(:course) { build(:course, name: nil) }
 
     it "is valid" do
-      expect(subject).to be_valid
+      expect(subject).to_not be_nil
     end
   end
+  
 end
