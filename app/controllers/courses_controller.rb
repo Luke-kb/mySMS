@@ -12,14 +12,14 @@ class CoursesController < ApplicationController
     end
 
     def update
-        if @course.update_attributes(params[:student])
+        if @course.update_attributes(params[:course])
             redirect_to @course, notice: 'Course was successfully updated.'
         else
+            flash[:alert] = "Course was not updated."
             render :edit
         end
     end
 
-        
     private
 
     def load_course

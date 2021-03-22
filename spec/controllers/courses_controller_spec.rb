@@ -44,8 +44,7 @@ RSpec.describe CoursesController, type: :controller do
             subject { put :update, id: course, course: attributes_for(:course, name: "Course1") } 
             
             it "updates course attributes" do
-                course.reload.name
-                expect { subject }.to change { course.name }.to("Course1")
+                expect { subject }.to change { course.reload.name }.to("Course1")
             end
             
             it { is_expected.to redirect_to course }
@@ -53,11 +52,15 @@ RSpec.describe CoursesController, type: :controller do
         
         context "with invalid attributes" do
             subject { put :update, id: course, course: attributes_for(:course, name: nil) }
+
+            it { is_expected.to render_template("courses/edit") }
             
             it "does not update course attributes" do
                 subject
                 expect(course.reload.name).to_not be_nil
             end
+
+
         end
     end
 end

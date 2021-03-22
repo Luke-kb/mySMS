@@ -31,7 +31,7 @@ class StudentsController < ApplicationController
     private
     
     def load_student
-        @student = Student.find(params[:id]).decorate
+        @student = Student.find(params[:id])
     end
 
 end
