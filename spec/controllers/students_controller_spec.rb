@@ -28,16 +28,15 @@ RSpec.describe StudentsController, type: :controller do
     end
     
     describe "GET #edit" do
-    subject { get :edit, id: student }
+        subject { get :edit, id: student }
 
         it { is_expected.to have_http_status(200) }
         it { is_expected.to render_template("students/edit") }
         
-        it "assigned requested student to @student" do
+        it "assigns requested student to @student" do
             subject
             expect(assigns(:student)).to eq student
         end
-        
     end
     
     describe "PUT #update" do
@@ -49,7 +48,6 @@ RSpec.describe StudentsController, type: :controller do
             end
             
             it { is_expected.to redirect_to student }
-
         end
         
         context "with invalid attributes" do
@@ -59,7 +57,6 @@ RSpec.describe StudentsController, type: :controller do
                 subject
                 expect(student.reload.first_name).to_not be_nil
             end
-            
         end
     end
 

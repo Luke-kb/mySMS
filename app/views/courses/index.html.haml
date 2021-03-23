@@ -1,0 +1,28 @@
+%h2 Course Index
+
+%table.table.table-striped
+  %tr
+    %th Name
+    %th Description
+    %th Length (semesters)
+    %th Start Date
+    %th End Date
+    %th Allocation (max. number)
+    %th
+    %th
+    %th
+  
+  - @courses.each do |course|
+    %tr
+      %td= course.name
+      %td= course.description
+      %td= course.number_of_semesters
+      %td= course.start_date
+      %td= course.end_date
+      %td= course.allocation
+      %td= link_to "Show", course_path(course)
+      %td= link_to "Edit", edit_course_path(course)
+      %td= link_to "Delete", course, method: :delete, data: { confirm: 'Are you sure?' }
+
+.apple_pagination
+  = will_paginate @courses

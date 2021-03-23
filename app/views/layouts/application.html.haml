@@ -18,7 +18,8 @@
         %a.navbar-brand{:href => "/"} My Student Management System
         .navbar-collapse.collapse.navbar-responsive-collapse
           %ul.nav.navbar-nav
-            %li= link_to "List", "/students"
+            %li= link_to "Students", students_path
+            %li= link_to "Courses", courses_path
     .container
       .row
         .col-lg-9

@@ -17,6 +17,6 @@ namespace :dev do
         FactoryBot.create_list(:student, 50, title_id: rand(1..6))  
     
         # Course table
-        FactoryBot.create_list(:course, 10)
+        FactoryBot.create_list(:course, 20)
     end
 end

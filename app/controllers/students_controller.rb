@@ -15,7 +15,7 @@ class StudentsController < ApplicationController
 
     def update
         if @student.update_attributes(params[:student])
-            redirect_to @student, notice: 'Student details has been successfully updated.'
+            redirect_to @student, notice: 'Student was successfully updated.'
         else
             render :edit
         end
@@ -29,6 +29,7 @@ class StudentsController < ApplicationController
     end
     
     private
+    
     def load_student
         @student = Student.find(params[:id])
     end
