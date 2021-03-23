@@ -13,4 +13,14 @@ RSpec.describe Institute, type: :model do
       expect(institute).to be_valid
     end
   end
+
+  context "with invalid attributes" do
+      let!(:institute) { build(:institute, name: nil) }
+
+      it "is not valid" do
+        institute.valid?
+        expect(institute.errors[:name]).to include("can't be blank")
+      end
+  end
+
 end

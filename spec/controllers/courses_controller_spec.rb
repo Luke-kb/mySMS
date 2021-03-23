@@ -16,7 +16,7 @@ RSpec.describe CoursesController, type: :controller do
     end
 
     describe "GET #show" do
-        subject {  get :show, id: course }
+        subject { get :show, id: course }
 
         it { is_expected.to have_http_status(200) }
         it { is_expected.to render_template("courses/show") }
@@ -59,8 +59,6 @@ RSpec.describe CoursesController, type: :controller do
                 subject
                 expect(course.reload.name).to_not be_nil
             end
-
-
         end
     end
 end
