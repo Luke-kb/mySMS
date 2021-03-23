@@ -18,5 +18,8 @@ namespace :dev do
     
         # Course table
         FactoryBot.create_list(:course, 20)
+
+        # Institute table
+        FactoryBot.create_list(:institute, 30)
     end
 end
