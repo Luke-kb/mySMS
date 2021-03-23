@@ -1,0 +1,10 @@
+.error, li {
+    color: red;
+    font-weight: 400;
+    font-size: medium;
+    margin-right: 2rem;
+}
+
+.error_field {
+    margin-bottom: 2rem;
+}
