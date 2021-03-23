@@ -1,0 +1,16 @@
+%h2 Institute Index 
+
+%table.table.table-striped
+    %tr
+        %th Name
+        %th 
+        %th 
+
+    - @institutes.each do |institute|
+        %tr
+            %td= institute.name
+            %td= link_to "Show", institute_path(institute)
+            %td= link_to "Edit", edit_institute_path(institute)
+
+.apple_pagination 
+    = will_paginate @institutes

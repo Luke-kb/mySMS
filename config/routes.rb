@@ -4,5 +4,6 @@ Mysms::Application.routes.draw do
   
   resources :students
   resources :courses
+  resources :institutes
 
 end
