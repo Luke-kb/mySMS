@@ -6,7 +6,7 @@ namespace :dev do
         t = Title.find_or_create_by_name(title) if title.present?
         t.save!
     end
-    # assign title_id to each student in batches 
+    # assign title_id to each student where title matches 
     Title.all.each do |title|
         Student.where(old_title: title.name).update_all(title_id: title.id)
     end
