@@ -1,0 +1,11 @@
+.form-container 
+    = render 'shared/error_messages', obj: @institute
+
+    = form_for @institute do |f|
+        .form-group
+            = f.label :name, "Name"
+            = f.text_field :name
+        .form-group 
+            = f.submit "Update", class: 'btn btn-success'
+
+= link_to 'Back', institutes_path, class: 'btn btn-info'

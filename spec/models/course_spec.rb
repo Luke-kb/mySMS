@@ -22,5 +22,4 @@ RSpec.describe Course, type: :model do
       expect(course.errors[:name]).to include("can't be blank")
     end
   end
-  
 end

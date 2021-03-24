@@ -1,27 +1,30 @@
-%div.form-container
+.form-container
+
+  = render 'shared/error_messages', obj: @student
+
   = form_for @student do |f|
-    %div.form-group
+    .form-group
       = f.label :title, "Title"
       = f.select_tag :title, options_from_collection_for_select(Title.all, :id, :name )
-    %div.form-group
+    .form-group
       = f.label :first_name, "First Name"
       = f.text_field :first_name
-    %div.form-group
+    .form-group
       = f.label :middle_name, "Middle Name"
       = f.text_field :middle_name
-    %div.form-group
+    .form-group
       = f.label :last_name, "Surname"
       = f.text_field :last_name
-    %div.form-group
+    .form-group
       = f.label :email, "Email"
       = f.email_field :email
-    %div.form-group
+    .form-group
       = f.label :birth_date, "Date of Birth"
       = f.date_select :birth_date, class: 'input-field'
-    %div.form-group
+    .form-group
       = f.label :gender, "Gender"
       = f.select_tag :gender, options_for_select(["Male", "Female", "Non-Binary"])
-    %div.form-group
+    .form-group
       = f.submit "Update", class: 'btn btn-success'
 
 = link_to 'Back', students_path, class: 'btn btn-info'

@@ -1,4 +1,7 @@
 %div.form-container
+
+  = render 'shared/error_messages', obj: @course
+
   = form_for @course do |f|
     %div.form-group
       = f.label :name, "Course Name"
