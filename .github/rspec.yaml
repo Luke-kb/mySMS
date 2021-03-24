@@ -1,0 +1,52 @@
+env:    
+  RUBY_VERSION: 2.3.8
+  MYSQL_USER: root
+  MYSQL_PASSWORD: password
+  MYSQL_DB: mysms_test
+  MYSQL_DATABASE_HOST: 127.0.0.1
+
+name: develop
+on: [push, pull_request, workflow_dispatch]
+jobs:
+  rubocop-test:
+    name: Rubocop
+    runs-on: ubuntu-16.04
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-ruby@v1
+        with:
+          ruby-version: ${{ env.RUBY_VERSION }}
+      - name: Install Rubocop
+        run: gem install rubocop
+      - name: Check code
+        run: rubocop
+  rspec-test:
+    name: RSpec
+    needs: rubocop-test
+    runs-on: ubuntu-16.04
+    services:
+      mysql:
+        image: mysql:5.7
+        ports:
+          - 3306:3306
+        env:
+          MYSQL_USER: ${{ env.MYSQL_USER }}
+          MYSQL_PASSWORD: ${{ env.MYSQL_PASSWORD }}
+      steps:
+      - uses: actions/checkout@v2
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: ${{ env.RUBY_VERSION }}
+      - name: Install MySQL client
+        run: |
+          sudo apt-get install libmysqlclient-dev mysql-client
+      - name: Install dependencies
+        run: |
+          gem install bundler -v 1.17
+          bundle install
+      - name: create and migrate db
+        run: |
+          bundle exec rake db:create RAILS_ENV=test
+          bundle exec rake db:migrate RAILS_ENV=test
+      - name: run Rspec
+        run: bundle exec rspec
