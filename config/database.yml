@@ -17,7 +17,7 @@ default: &default
   pool: 5
   username: root
   password: password
-  host: db
+  host: <%= ENV["MYSQL_HOST"] || 'db' %>
   port: 3306
 
 development: 
