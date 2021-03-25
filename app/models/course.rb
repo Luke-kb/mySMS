@@ -1,5 +1,7 @@
 class Course < ActiveRecord::Base
-  attr_accessible :allocation, :description, :end_date, :name, :number_of_semesters, :start_date
+  attr_accessible :allocation, :description, :end_date, :name, :number_of_semesters, :start_date, :institute_id
+
+  belongs_to :institute
 
   validates :name, presence: true
   validates :description, presence: true
