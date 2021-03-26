@@ -7,20 +7,9 @@
     %title= content_for?(:title) ? yield(:title) : "MySMS"
     = csrf_meta_tags
     = stylesheet_link_tag "application", :media => "all"
-    = javascript_include_tag "application"
+    -# = javascript_include_tag "application"
   %body
-    .navbar.navbar-default.navbar-static-top
-      .container
-        %button.navbar-toggle{"data-target" => ".navbar-responsive-collapse", "data-toggle" => "collapse", :type => "button"}
-          %span.icon-bar
-          %span.icon-bar
-          %span.icon-bar
-        %a.navbar-brand{:href => "/"} My Student Management System
-        .navbar-collapse.collapse.navbar-responsive-collapse
-          %ul.nav.navbar-nav
-            %li= link_to "Students", students_path
-            %li= link_to "Courses", courses_path
-            %li= link_to "Institutes", institutes_path
+    = render 'layouts/navbar'
     .container
       .row
         .col-lg-9
