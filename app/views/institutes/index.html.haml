@@ -4,16 +4,17 @@
   %tr
     %th Name
     %th 
-    %th 
-    %th Courses Offered
+    %th Courses
 
   - @institutes.each do |institute|
     %tr
-      %td= institute.name
-      %td= link_to "Show", institute_path(institute)
-      %td= link_to "Edit", edit_institute_path(institute)
+      -# %td= institute.name
+      %td= link_to "#{institute.name}", institute_path(institute)
+      %td 
+        %ul.list-unstyled
+          %li= link_to "Edit", edit_institute_path(institute)
       %td
-        %ul
+        %ul.list-unstyled
           - institute.courses.each do |course| 
             %li 
               = link_to "#{course.name}", course_path(course) 
