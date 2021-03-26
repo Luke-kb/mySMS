@@ -1,16 +1,22 @@
 %h2 Institute Index 
 
-%table.table.table-striped
-    %tr
-        %th Name
-        %th 
-        %th 
+%table.table.table-bordered.table-hover
+  %tr
+    %th Name
+    %th 
+    %th 
+    %th Courses Offered
 
-    - @institutes.each do |institute|
-        %tr
-            %td= institute.name
-            %td= link_to "Show", institute_path(institute)
-            %td= link_to "Edit", edit_institute_path(institute)
+  - @institutes.each do |institute|
+    %tr
+      %td= institute.name
+      %td= link_to "Show", institute_path(institute)
+      %td= link_to "Edit", edit_institute_path(institute)
+      %td
+        %ul
+          - institute.courses.each do |course| 
+            %li 
+              = link_to "#{course.name}", course_path(course) 
 
 .apple_pagination 
-    = will_paginate @institutes
+  = will_paginate @institutes
