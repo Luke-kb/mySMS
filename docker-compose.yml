@@ -5,7 +5,7 @@ services:
     image: mysql:5.7
     restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: password
+      MYSQL_ROOT_PASSWORD: dingo
       MYSQL_DATABASE: mysms
     ports:
       - "3306:3306"
@@ -14,7 +14,7 @@ services:
     command: tail -f /dev/null
     environment:
       DB_HOST: db
-      DB_PWD: password
+      DB_PWD: dingo
       DB_USER_NAME: root
       DB_PORT: 3306
     volumes:

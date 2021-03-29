@@ -1,5 +1,5 @@
 FactoryBot.define do
   factory :title do
-    name { Faker::Name.unique.prefix }
+    name { Faker::Name.prefix }
   end
 end
