@@ -1,6 +1,6 @@
 # mySMS: My Student Management System
 
-
+[![develop](https://github.com/Luke-kb/mySMS/actions/workflows/rspec.yml/badge.svg)](https://github.com/Luke-kb/mySMS/actions/workflows/rspec.yml)
 ## Installation
 
 ### To setup using docker/docker-compose
