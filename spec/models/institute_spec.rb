@@ -15,4 +15,5 @@ RSpec.describe Institute, type: :model do
     let(:name) { nil }
 
     it { is_expected.to_not be_valid }
+  end
 end
