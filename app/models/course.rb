@@ -1,5 +1,7 @@
 class Course < ActiveRecord::Base
-  attr_accessible :allocation, :description, :end_date, :name, :number_of_semesters, :start_date
+  attr_accessible :allocation, :description, :end_date, :name, :number_of_semesters, :start_date, :institute_id
+
+  belongs_to :institute
 
   validates :name, presence: true
   validates :description, presence: true
@@ -7,5 +9,4 @@ class Course < ActiveRecord::Base
   validates :start_date, presence: true
   validates :end_date, presence: true
   validates :allocation, presence: true
-
 end

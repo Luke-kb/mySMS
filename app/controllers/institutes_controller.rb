@@ -2,7 +2,7 @@ class InstitutesController < ApplicationController
   before_filter :load_institute, except: [:index]
 
   def index
-    @institutes = Institute.paginate(page: params[:page], per_page: 10)
+    @institutes = Institute.includes(:courses).order(:name).paginate(page: params[:page], per_page: 10)
   end
 
   def show

@@ -4,6 +4,7 @@
   %tr
     %th Name
     %th Description
+    %th Institute
     %th Length (semesters)
     %th Start Date
     %th End Date
@@ -16,6 +17,7 @@
     %tr
       %td= course.name
       %td= course.description
+      %td= course.institute&.name
       %td= course.number_of_semesters
       %td= course.start_date
       %td= course.end_date

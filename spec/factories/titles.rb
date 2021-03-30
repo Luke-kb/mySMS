@@ -1,5 +1,5 @@
 FactoryBot.define do
   factory :title do
-    name { Faker::Name.prefix }
+    name { %w[Mr Mrs Miss Ms Dr Master].sample }
   end
 end

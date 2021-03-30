@@ -1,0 +1,47 @@
+env:    
+  RUBY_VERSION: 2.3.8
+  MYSQL_USER: root
+  MYSQL_ROOT_PASSWORD: dingo
+  MYSQL_DB: mysms_test
+  MYSQL_DATABASE_HOST: 127.0.0.1
+
+name: develop
+on: [push, workflow_dispatch]
+jobs:
+  rspec-test:
+    name: RSpec
+    runs-on: ubuntu-16.04
+    services:
+      mysql:
+        image: mysql:5.7
+        ports:
+          - 3306:3306
+        env:
+          MYSQL_USER: ${{ env.MYSQL_USER }}
+          MYSQL_ROOT_PASSWORD: ${{ env.MYSQL_ROOT_PASSWORD }}
+    steps:
+      - uses: actions/checkout@v2
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: ${{ env.RUBY_VERSION }}
+          bundler-cache: true
+      - uses: mirromutth/mysql-action@v1.1
+        with:
+          mysql version: '5.7' 
+          mysql database: 'mysms_test' 
+          mysql root password: ${{ env.MYSQL_ROOT_PASSWORD }}
+      - name: Sleep for 10 seconds
+        uses: jakejarvis/wait-action@master
+        with:
+          time: '10s'
+      - name: Install dependencies
+        run: |
+          gem install bundler -v 1.17
+          bundle install
+      - name: create and migrate db
+        run: |
+          bundle exec rake db:create
+          bundle exec rake db:migrate
+          bundle exec rake db:test:prepare
+      - name: run Rspec
+        run: bundle exec rspec -f d

@@ -3,25 +3,28 @@
   = render 'shared/error_messages', obj: @course
 
   = form_for @course do |f|
-    %div.form-group
+    .form-group
       = f.label :name, "Course Name"
       = f.text_field :name
-    %div.form-group
+    .form-group
       = f.label :description, "Description"
       = f.text_area :description
-    %div.form-group
+    .form-group
       = f.label :number_of_semesters, "Number of Semesters"
       = f.number_field :number_of_semesters
-    %div.form-group
+    .form-group
       = f.label :start_date, "Start Date"
       = f.date_select :start_date
-    %div.form-group
+    .form-group
       = f.label :end_date, "End Date"
       = f.date_select :end_date
-    %div.form-group
+    .form-group
       = f.label :allocation, "Allocation"
       = f.number_field :allocation
-    %div.form-group
+    .form-group
+      = f.label :institute, "Institute"
+      = f.select_tag :institute, options_from_collection_for_select(Institute.all, :id, :name)
+    .form-group
       = f.submit "Update", class: 'btn btn-success'
 
 = link_to 'Back', courses_path, class: 'btn btn-info'

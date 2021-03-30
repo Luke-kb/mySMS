@@ -1,6 +1,7 @@
 FactoryBot.define do
   factory :course do
-    name { "#{Faker::Job.unique.field} 101" }
+    institute
+    name { "#{Faker::Educator.unique.course_name}" }
     description { (Faker::Lorem.paragraphs(number: 2, supplemental: true)).join(" ") }
     number_of_semesters { rand(1..4) }
     start_date { Faker::Date.between(from: 10.days.ago, to: Date.today) }
