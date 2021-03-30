@@ -10,9 +10,14 @@ namespace :dev do
         FactoryBot.create(:title, id: (i + 1), name: "#{v}")
     }
     # Student table
-    FactoryBot.create_list(:student, 20, title_id: rand(1..6))
+    20.times do
+      FactoryBot.create(:student, title_id: rand(1..6))
+    end
+    
     # Course table
-    FactoryBot.create_list(:course, 20)
+    20.times do 
+      FactoryBot.create(:course, institute_id: rand(1..10))
+    end
     # Institute table
     FactoryBot.create_list(:institute, 10)
   end
