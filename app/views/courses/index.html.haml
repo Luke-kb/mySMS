@@ -21,7 +21,7 @@
       %td= course.start_date
       %td= course.end_date
       %td= course.allocation
-      %td= course&.institute.name
+      %td= course&.institute&.name
       %td= link_to "Show", course_path(course)
       %td= link_to "Edit", edit_course_path(course)
       %td= link_to "Delete", course, method: :delete, data: { confirm: 'Are you sure?' }
