@@ -8,7 +8,6 @@
 
   - @institutes.each do |institute|
     %tr
-      -# %td= institute.name
       %td= link_to "#{institute.name}", institute_path(institute)
       %td 
         %ul.list-unstyled
