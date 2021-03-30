@@ -1,8 +1,10 @@
 class AddInstituteReferenceToCourseTable < ActiveRecord::Migration
-  def change
-    # add foreign key institute_id column
-    change_table :courses do |t|
-      t.references :institute, null: false
-    end
+  def up
+    add_column :courses, :institute_id, :integer, null: false
+    add_index :courses, :institute_id
+  end
+
+  def down
+    remove_column :courses, :institute_id
   end
 end

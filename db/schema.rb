@@ -25,6 +25,8 @@ ActiveRecord::Schema.define(:version => 20210325004818) do
     t.integer  "institute_id",        :null => false
   end
 
+  add_index "courses", ["institute_id"], :name => "index_courses_on_institute_id"
+
   create_table "institutes", :force => true do |t|
     t.string   "name",       :null => false
     t.datetime "created_at", :null => false
