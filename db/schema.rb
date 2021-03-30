@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(:version => 20210325004818) do
     t.integer  "allocation",          :null => false
     t.datetime "created_at",          :null => false
     t.datetime "updated_at",          :null => false
-    t.integer  "institute_id",        :null => false
+    t.integer  "institute_id"
   end
 
   add_index "courses", ["institute_id"], :name => "index_courses_on_institute_id"
