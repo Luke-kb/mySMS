@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :course do
-    :institute
+    institute
     name { "#{Faker::Educator.unique.course_name}" }
     description { (Faker::Lorem.paragraphs(number: 2, supplemental: true)).join(" ") }
     number_of_semesters { rand(1..4) }
