@@ -1,10 +1,11 @@
-.error > li {
-    color: red;
-    font-weight: 400;
-    font-size: medium;
-    margin-right: 2rem;
+ul.error {
+  margin-right: 2rem;
 }
 
 .error_field {
-    margin-bottom: 2rem;
+  color: red;
+  font-size: medium;
+  font-weight: 400;
+  margin-bottom: 2rem;
+  margin-left: 2rem;
 }
