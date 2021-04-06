@@ -7,8 +7,6 @@
     %th DOB
     %th Gender
     %th
-    %th
-    %th
   
   - @students.each do |student|
     %tr
@@ -16,9 +14,12 @@
       %td= student.email
       %td= student.birth_date
       %td= student.gender
-      %td= link_to "Show", student_path(student)
-      %td= link_to "Edit", edit_student_path(student)
-      %td= link_to "Delete", student, method: :delete, data: { confirm: 'Are you sure?' }
+      %td
+        %ul.list-unstyled.list-inline
+          %li= link_to "Add Note +", class: 'btn btn-default btn-sm'
+          %li= link_to "Show", student_path(student)
+          %li= link_to "Edit", edit_student_path(student)
+          %li= link_to "Delete", student, method: :delete, data: { confirm: 'Are you sure?' }
 
 .apple_pagination
   = will_paginate @students
