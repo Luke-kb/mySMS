@@ -1,4 +1,5 @@
 %h3= "#{student.full_name}"
+%p= link_to "Add Note +", new_student_note_path(@student), class: 'btn btn-default btn-sm'
 
 %table.table.table-striped
   %tbody
@@ -22,7 +23,6 @@
       %td= student.gender
       %td
         %ul.list-unstyled.list-inline
-          %li= link_to "Add Note +", class: 'btn btn-default btn-sm'
           %li= link_to "Edit", edit_student_path(student)
           %li= link_to "Delete", student, method: :delete, data: { confirm: 'Are you sure?' }
       
@@ -33,5 +33,7 @@
   %p= note.content
   %p= "(Last updated #{time_ago_in_words(note.updated_at)} ago)" 
   %hr
+
+-# = render partial: "notes/form", locals: { notable: @student }
 
 = link_to "Back", students_path, class: 'btn btn-info'

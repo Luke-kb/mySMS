@@ -1,9 +1,11 @@
 Mysms::Application.routes.draw do
   
-  root to: "students#index"
+  resources :students do
+    resources :notes, module: :students
+  end
   
-  resources :students
   resources :courses
   resources :institutes
-
+  
+  root to: "students#index"
 end

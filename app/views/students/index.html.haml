@@ -16,7 +16,7 @@
       %td= student.gender
       %td
         %ul.list-unstyled.list-inline
-          %li= link_to "Add Note +", class: 'btn btn-default btn-sm'
+          %li= link_to "Add Note +", new_student_note_path(student.id), class: 'btn btn-default btn-sm'
           %li= link_to "Show", student_path(student)
           %li= link_to "Edit", edit_student_path(student)
           %li= link_to "Delete", student, method: :delete, data: { confirm: 'Are you sure?' }

@@ -1,0 +1,5 @@
+= form_for [@notable, Note.new] do |f|
+  .form-group   
+    = f.text_field :title, class: 'form-control', placeholder: 'Enter a title.'
+    = f.text_area :content, class: 'form-control', placeholder: 'Enter note content.'
+  = f.submit class: 'btn btn-primary'
