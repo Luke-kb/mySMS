@@ -34,12 +34,12 @@ ActiveRecord::Schema.define(:version => 20210406003421) do
   end
 
   create_table "notes", :force => true do |t|
-    t.string   "title"
-    t.text     "content"
+    t.string   "title",        :default => "", :null => false
+    t.text     "content",                      :null => false
     t.integer  "notable_id"
     t.string   "notable_type"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
+    t.datetime "created_at",                   :null => false
+    t.datetime "updated_at",                   :null => false
   end
 
   create_table "students", :force => true do |t|
