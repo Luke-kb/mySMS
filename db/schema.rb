@@ -36,8 +36,8 @@ ActiveRecord::Schema.define(:version => 20210406003421) do
   create_table "notes", :force => true do |t|
     t.string   "title",        :default => "", :null => false
     t.text     "content",                      :null => false
-    t.integer  "notable_id"
-    t.string   "notable_type"
+    t.integer  "notable_id",                   :null => false
+    t.string   "notable_type",                 :null => false
     t.datetime "created_at",                   :null => false
     t.datetime "updated_at",                   :null => false
   end

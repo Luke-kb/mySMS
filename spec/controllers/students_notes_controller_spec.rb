@@ -2,7 +2,8 @@ require 'rails_helper'
 
 RSpec.describe Students::NotesController, type: :controller do
   let(:student) { create :student }
-  let(:notable) { create :note, title: "cool note!", notable_type: "Student", notable_id: notable }
+  let(:notable) { create :note, notable_type: "Student", notable_id: notable }
+  let(:note_params) { { title: "note1", content: "note1 content"} }
   
   describe "GET #new" do
     subject { get :new, student_id: student }
@@ -13,14 +14,13 @@ RSpec.describe Students::NotesController, type: :controller do
   end
   
   describe "POST #create" do    
-    subject { post :create, student_id: student }
+    subject { post :create, note: note_params, student_id: student }
     
     context 'with valid attributes' do
 
       it "saves note in the database" do
         expect { subject }.to change { Note.count }.by(1) 
       end
-      
     end
     
     context 'with invalid attributes' do

@@ -7,7 +7,8 @@ class Students::NotesController < ApplicationController
 
   def create
     @note = @notable.notes.new(params[:note])
-    if @note.save 
+    if @note.valid?
+      @note.save!
       redirect_to @notable, notice: 'Note added.'
     else
       render :new
