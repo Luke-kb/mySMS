@@ -15,5 +15,6 @@ RSpec.describe Student, type: :model do
       expect(subject.full_name).to eq("Mr Harry James Potter")
     end
 
+    it { is_expected.to have_many(:notes) }
   end
 end

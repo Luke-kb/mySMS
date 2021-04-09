@@ -1,27 +1,39 @@
-%h3= "#{student.full_name}"
+%ul.list-unstyled.list-inline
+  %li 
+    %h3= "#{student.full_name}"
+  %li= link_to "Add Note +", new_student_note_path(student), class: 'btn btn-success btn-sm'
 
 %table.table.table-striped
-    %tbody
-        %tr
-            %th Title
-            %th First Name
-            %th Middle Name
-            %th Surname
-            %th Email
-            %th DOB (YYYY-MM-DD)
-            %th Gender
-            %th
-            %th
+  %tbody
+    %tr
+      %th Title
+      %th First Name
+      %th Middle Name
+      %th Surname
+      %th Email
+      %th DOB (YYYY-MM-DD)
+      %th Gender
+      %th
 
-        %tr
-            %td= student.title.name
-            %td= student.first_name
-            %td= student.middle_name
-            %td= student.last_name
-            %td= student.email
-            %td= student.birth_date
-            %td= student.gender
-            %td= link_to "Edit", edit_student_path(student)
-            %td= link_to "Delete", student, method: :delete, data: { confirm: 'Are you sure?' }
+    %tr
+      %td= student.title.name
+      %td= student.first_name
+      %td= student.middle_name
+      %td= student.last_name
+      %td= student.email
+      %td= student.birth_date
+      %td= student.gender
+      %td
+        %ul.list-unstyled.list-inline
+          %li= link_to "Edit", edit_student_path(student)
+          %li= link_to "Delete", student, method: :delete, data: { confirm: 'Are you sure?' }
+      
+%h3= "Notes"
+%hr
+- @student.notes.each do |note|
+  %h4= note.title 
+  %p= note.content
+  %p= "(Last updated #{time_ago_in_words(note.updated_at)} ago)" 
+  %hr
 
 = link_to "Back", students_path, class: 'btn btn-info'
