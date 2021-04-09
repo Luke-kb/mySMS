@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Note, type: :model do
-  subject { build(:note) }
+  subject { build(:note, notable_type: "Student") }
 
   context 'with valid attributes' do
     it { is_expected.to be_valid }
